@@ -11,10 +11,12 @@
                         	<div class="text-center" style="font-weight:bold; font-size:20px;">
                         		Edit Barang Masuk
                         	</div>
+                            <input type="hidden" name="kode_masuk" value="<?= $barang_masuk->kode_masuk ?>" />
+                            <input type="hidden" name="id" value="<?= $barang_masuk->id ?>" />
                         	<div class="col-md-3">
                         		<div class="form-group">
 	                                <label>Kode Masuk Barang</label>
-	                                <input type="text" class="form-control" placeholder="Kode Masuk Barang" name="kode_masuk">
+	                                <input type="text" class="form-control" placeholder="Kode Masuk Barang" name="kode_masuk" value="<?= $barang_masuk->kode_masuk ?>" disabled>
 	                            </div>
                         	</div>
                         	<div class="clearfix"></div>

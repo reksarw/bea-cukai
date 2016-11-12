@@ -21,6 +21,7 @@ class Kelola extends CI_Controller {
 
 		$data['jenis_barang'] = $this->builder->getData('jenis_barang');
 		$data['juru_sita'] = $this->builder->getData('jurusita');
+		$data['barang_masuk'] = $this->builder->getWhere('barang_masuk' , array('id' => $this->input->get('id')));
 		$this->template->views('kelola/edit_barang_masuk' , $data);
 	}
 
@@ -134,7 +135,7 @@ class Kelola extends CI_Controller {
 			break;
 		}
 	}
-	
+
 	public function edit_barang_keluar() {
 		$id = trim($_POST['id']);
 
