@@ -14,6 +14,11 @@ class Kelola extends CI_Controller {
 	public function Add_Barang_Keluar() {
 		$this->template->views('kelola/add_barang_keluar');
 	}
+
+	public function act_simpan()
+	{
+		print_r($_POST);
+	}
 }
 
 /* End of file Kelola.php */
