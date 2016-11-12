@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Login ke Aplikasi Bea Cukai</title>
+    <title>Login ke Aplikasi Pencatatan Barang Sitaan Bea Cukai</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
