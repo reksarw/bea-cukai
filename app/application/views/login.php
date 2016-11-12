@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>Login ke Aplikasi Bea Cukai</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -54,7 +54,7 @@
                             <br>
                         <?php
                         } else {
-                            echo $this->session->flashdata('msg');;
+                            echo $this->session->flashdata('msg');
                         }
                     ?>
                 </div>
@@ -75,7 +75,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
-                            <input type="checkbox" id="remember" name="remember" value="Remember Me"> 
+                            <input type="checkbox" id="remember" name="remember" value="true"> 
                             <label for="remember" style="font-weight:normal;">Remember Me</label>
                         </div>
                     </div>

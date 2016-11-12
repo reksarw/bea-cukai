@@ -34,7 +34,19 @@ class Login extends CI_Controller {
 			$proses = $this->builder->getWhere('login' , $where);
 
 			if (count($proses) > 0) {
+				if ( $this->input->post('remember'))
+				{
+					$cookie = array(
+						'name' => 'remember',
+						'value' => $username,
+						'expire' => '216000' // 24 jam
+					);
+
+					set_cookie($cookie);
+				}
+
 				$this->session->set_userdata('user_session', $proses);
+				
 				redirect('Home');
 			} else {
 				$this->session->set_flashdata('msg', err_msg('Username atau Password Anda Salah'));
@@ -45,14 +57,14 @@ class Login extends CI_Controller {
 
 	public function act_logout() {
 		$this->session->sess_destroy();
-
+		delete_cookie('remember');
 		redirect('Login');
 	}
 
 	public function check_login() {
 		$this->user_login = $this->session->userdata('user_session');
 
-		if (count($this->user_login) > 0) {
+		if (count($this->user_login) > 0 || get_cookie('remember')) {
 			redirect('Home');
 		}
 	}
