@@ -12,10 +12,19 @@ class Kelola extends CI_Controller {
 		$this->template->views('kelola/barang_masuk' , $data);
 	}
 	public function Pilih_Barang() {
-		$this->template->views('kelola/pilih_barang');
+		$data['lihat_barang'] = $this->builder->getData('barang_masuk');
+		$this->template->views('kelola/pilih_barang' , $data);
 	}
 	public function Add_Barang_Keluar() {
-		$this->template->views('kelola/add_barang_keluar');
+		if ( ! isset($_REQUEST['kode_masuk']) || ! isset($_REQUEST['id']))
+		{
+			redirect();
+		}
+
+		$data['barang_masuk'] = $this->builder->getWhere('barang_masuk' , array('kode_masuk' => $_REQUEST['kode_masuk'] , 'id' => $_REQUEST['id']));
+
+		//echo $_REQUEST['kode_masuk'].'<BR>'.$_REQUEST['id'];
+		$this->template->views('kelola/add_barang_keluar' , $data);
 	}
 	public function Barang_Keluar() {
 		$this->template->views('kelola/barang_keluar');

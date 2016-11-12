@@ -58,37 +58,37 @@
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Nomor Surat</label>
-                                    <input type="text" class="form-control" placeholder="Nomor Surat" name="no_surat" value="KBCA-TSC001-0" disabled>
+                                    <input type="text" class="form-control" placeholder="Nomor Surat" name="no_surat" value="<?= $barang_masuk->nomor_surat ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Juru Sita</label>
-                                    <input type="text" class="form-control" placeholder="Juru Sita" name="juru_sita" value="Ade Riza" disabled>
+                                    <input type="text" class="form-control" placeholder="Juru Sita" name="juru_sita" value="<?= $barang_masuk->juru_sita ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Lokasi</label>
-                                    <input type="text" class="form-control" placeholder="Lokasi" name="lokasi" value="PASURUAN" disabled>
+                                    <input type="text" class="form-control" placeholder="Lokasi" name="lokasi" value="<?= $barang_masuk->lokasi ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Tanggal Sita</label>
-                                    <input type="date" class="form-control" placeholder="Tanggal Sita" name="tgl_sita" disabled>
+                                    <input type="date" class="form-control" placeholder="Tanggal Sita" name="tgl_sita" value="<?= $barang_masuk->tgl_sita; ?>"disabled>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Nomor Disposisi</label>
-                                    <input type="text" class="form-control" placeholder="Nomor Surat" name="no_disposisi" value="0996059" disabled>
+                                    <input type="text" class="form-control" placeholder="Nomor Surat" name="no_disposisi" value="<?= $barang_masuk->no_disposisi ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Disposisi Akhir</label>
-                                    <input type="text" class="form-control" placeholder="Nomor Surat" name="disposisi_akhir" value="GUDANG" disabled>
+                                    <input type="text" class="form-control" placeholder="Nomor Surat" name="disposisi_akhir" value="<?= $barang_masuk->disposisi_akhir ?>" disabled>
                                 </div>
                             </div>
 
@@ -99,105 +99,105 @@
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Jenis Barang</label>
-                                    <input type="text" class="form-control" placeholder="Jenis Barang" name="jenis_barang" value="ROKOK" disabled>
+                                    <input type="text" class="form-control" placeholder="Jenis Barang" name="jenis_barang" value="<?= $barang_masuk->jenis_barang ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Asal Barang</label>
-                                    <input type="text" class="form-control" placeholder="Asal Barang" name="asal" value="MADURA" disabled>
+                                    <input type="text" class="form-control" placeholder="Asal Barang" name="asal" value="<?= $barang_masuk->asal ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Tujuan Barang</label>
-                                    <input type="text" class="form-control" placeholder="Tujuan Barang" name="tujuan" value="MALANG" disabled>
+                                    <input type="text" class="form-control" placeholder="Tujuan Barang" name="tujuan" value="<?= $barang_masuk->tujuan ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>No Dokumen</label>
-                                    <input type="text" class="form-control" placeholder="Nomor Dokumen" name="no_dok" value="SNRMAS00190966" disabled>
+                                    <input type="text" class="form-control" placeholder="Nomor Dokumen" name="no_dok" value="<?= $barang_masuk->no_dok ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Nomor Petikemas</label>
-                                    <input type="text" class="form-control" placeholder="Nomor Petikemas" name="no_peti" value="1" disabled>
+                                    <input type="text" class="form-control" placeholder="Nomor Petikemas" name="no_peti" value="<?= $barang_masuk->no_petikemas ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Jumlah Barang</label>
-                                    <input type="text" class="form-control" placeholder="Jumlah Barang" name="jumlah" value="2" disabled>
+                                    <input type="text" class="form-control" placeholder="Jumlah Barang" name="jumlah" value="<?= $barang_masuk->jumlah ?>" disabled>
                                 </div>
                             </div>
 
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Pengemasan</label>
-                                    <input type="text" class="form-control" placeholder="Pengemasan" name="pengemasan" value="Box Karton" disabled>
+                                    <input type="text" class="form-control" placeholder="Pengemasan" name="pengemasan" value="<?= $barang_masuk->pengemasan ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Lama Sita</label>
-                                    <input type="text" class="form-control" placeholder="Lama Sita" name="lama" value="3 BULAN" disabled>
+                                    <input type="text" class="form-control" placeholder="Lama Sita" name="lama" value="<?= $barang_masuk->lama ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Nomor Register</label>
-                                    <input type="text" class="form-control" placeholder="No Register" name="no_register" value="RGKEPABEAAN00" disabled>
+                                    <input type="text" class="form-control" placeholder="No Register" name="no_register" value="<?= $barang_masuk->no_register ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>No Petikemas</label>
-                                    <input type="text" class="form-control" placeholder="Nomor Petikemas" name="no_peti" value="9069909607005" disabled>
+                                    <input type="text" class="form-control" placeholder="Nomor Petikemas" name="no_peti" value="<?= $barang_masuk->no_peti ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Nama Pemilik</label>
-                                    <input type="text" class="form-control" placeholder="Nama Pemilik" name="nama_pemilik" value="RIKWANTO" disabled>
+                                    <input type="text" class="form-control" placeholder="Nama Pemilik" name="nama_pemilik" value="<?= $barang_masuk->nama_pemilik ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>NPWP</label>
-                                    <input type="text" class="form-control" placeholder="NPWP Pemilik" name="npwp" value="089009909907950" disabled>
+                                    <input type="text" class="form-control" placeholder="NPWP Pemilik" name="npwp" value="<?= $barang_masuk->npwp ?>" disabled>
                                 </div>
                             </div>
 
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Alamat</label>
-                                    <input type="text" class="form-control" placeholder="Alamat" name="alamat" value="MADURA" disabled>
+                                    <input type="text" class="form-control" placeholder="Alamat" name="alamat" value="<?= $barang_masuk->alamat ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Ijin Tbp</label>
-                                    <input type="text" class="form-control" placeholder="Ijin TBP" name="tbp" value="REG-099749587-0" disabled>
+                                    <input type="text" class="form-control" placeholder="Ijin TBP" name="tbp" value="<?= $barang_masuk->tpb ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>No Register Sita</label>
-                                    <input type="text" class="form-control" placeholder="Nomor Register Sita" name="reg_sita" value="909577990000016" disabled>
+                                    <input type="text" class="form-control" placeholder="Nomor Register Sita" name="reg_sita" value="<?= $barang_masuk->reg_sita ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>No Rak / Tempat</label>
-                                    <input type="text" class="form-control" placeholder="Lokasi Simpan" name="rak" value="RAK 38" disabled>
+                                    <input type="text" class="form-control" placeholder="Lokasi Simpan" name="rak" value="<?= $barang_masuk->rak ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Kadaluarsa</label>
-                                    <input type="text" class="form-control" placeholder="Kadaluarsa" name="kadaluarsa" value="." disabled>
+                                    <input type="text" class="form-control" placeholder="Kadaluarsa" name="kadaluarsa" value="<?= $barang_masuk->kadaluarsa ?>" disabled>
                                 </div>
                             </div>
 

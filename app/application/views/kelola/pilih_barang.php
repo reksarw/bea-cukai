@@ -29,21 +29,24 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $no = 1; 
+                                foreach($lihat_barang->result() as $data): ?>
                                 <tr class="odd gradeX">
-                                    <td>1</td>
-                                    <td>BM0001</td>
-                                    <td>a</td>
-                                    <td>Ade Riza</td>
-                                    <td>24-05-2015</td>
-                                    <td>a</td>
-                                    <td>a</td>
-                                    <td>a</td>
+                                    <td><?= $no++; ?></td>
+                                    <td><?= $data->kode_masuk?></td>
+                                    <td><?= $data->nomor_surat?></td>
+                                    <td><?= $data->juru_sita?></td>
+                                    <td><?= $data->tgl_sita?></td>
+                                    <td><?= $data->no_disposisi?></td>
+                                    <td><?= $data->no_dok?></td>
+                                    <td><?= $data->nama_pemilik?></td>
                                     <td>
-                                        <a href="<?php echo base_url('Kelola/Add_Barang_Keluar'); ?>" class="btn btn-default">
+                                        <a href="<?= base_url("Kelola/Add_Barang_Keluar?kode_masuk=".$data->kode_masuk."&id=".$data->id."")?>" class="btn btn-default">
                                             <i class="fa fa-pencil"></i> Add Barang Keluar
                                         </a>
                                     </td>
                                 </tr>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>
