@@ -17,13 +17,15 @@ class Master extends CI_Controller {
 
 		if ( $this->form_validation->run() == FALSE)
 		{
+			$this->session->set_flashdata('msg', err_msg(validation_errors()));
 			redirect('Master/Jenis_Barang');
 		}
 		else
 		{
 			$x = $this->input->post();
-
 			$this->builder->insertData('jenis_barang', $x);
+
+			$this->session->set_flashdata('msg', err_msg('Jenis barang berhasil ditambahkan'));
 			redirect('Master/Jenis_Barang');
 		}
 	}
