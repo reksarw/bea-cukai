@@ -5,7 +5,7 @@
         </a>
         <ul class="dropdown-menu dropdown-user">
             <li>
-                <a href="<?php echo base_url('Login/Logout'); ?>">
+                <a href="<?php echo base_url('Login/act_logout'); ?>">
                     <i class="fa fa-sign-out fa-fw"></i> Logout
                 </a>
             </li>
