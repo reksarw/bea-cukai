@@ -25,7 +25,7 @@ class Master extends CI_Controller {
 			$x = $this->input->post();
 			$this->builder->insertData('jenis_barang', $x);
 
-			$this->session->set_flashdata('msg', err_msg('Jenis barang berhasil ditambahkan'));
+			$this->session->set_flashdata('msg', succ_msg('Jenis barang berhasil ditambahkan'));
 			redirect('Master/Jenis_Barang');
 		}
 	}
