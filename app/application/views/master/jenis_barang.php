@@ -42,18 +42,22 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php 
+                                $no = 1 ;
+                                foreach($jenis_barang as $data): ?>
                                 <tr class="odd gradeX">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 4.0</td>
+                                    <td><?= $no++ ?></td>
+                                    <td><?= $data->jenis_barang; ?></td>
                                     <td>
-                                        <button class="btn btn-default edit-data" data-id="1"> <!-- Data ID isi en id jenis -->
+                                        <button class="btn btn-default edit-data" data-id="<?= $data->id; ?>"> <!-- Data ID isi en id jenis -->
                                             <i class="fa fa-pencil"></i> Edit
                                         </button>
-                                        <a href="" class="btn btn-default">
+                                        <a href="<?= base_url().'Master/act_delete?id='.$data->id; ?>" class="btn btn-default">
                                             <i class="fa fa-minus"></i> Hapus
                                         </a>
                                     </td>
                                 </tr>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>

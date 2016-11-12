@@ -8,7 +8,9 @@ class Master extends CI_Controller {
 	}
 
 	public function Jenis_Barang() {
-		$this->template->views('master/jenis_barang');
+		$data['jenis_barang'] = $this->builder->getData('jenis_barang')->result();
+
+		$this->template->views('master/jenis_barang' , $data);
 	}
 
 	public function act_simpan()
@@ -28,6 +30,29 @@ class Master extends CI_Controller {
 			$this->session->set_flashdata('msg', succ_msg('Jenis barang berhasil ditambahkan'));
 			redirect('Master/Jenis_Barang');
 		}
+	}
+
+	public function act_edit()
+	{
+		$jenis_barang = $this->input->post('jenis_barang');
+		$id = $this->input->post('id');
+		$this->builder->updateData('jenis_barang', array('jenis_barang' => $jenis_barang) , "id = ".$id."");
+
+		redirect('Master/Jenis_Barang');
+	}
+
+	public function act_delete()
+	{
+		if ( ! isset($_REQUEST['id']))
+		{
+			redirect();
+		}
+
+		$id = $this->input->get('id');
+
+		$this->builder->deleteData('jenis_barang' , array('id' => $id));
+
+		redirect('Master/Jenis_Barang');		
 	}
 
 	public function edit_data() {
