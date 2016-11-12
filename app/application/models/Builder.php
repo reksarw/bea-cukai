@@ -69,6 +69,13 @@ class Builder extends CI_Model {
 		
 		return FALSE;
 	}
+
+	function countData ($tabel)
+	{
+		$query = $this->db->get($tabel);
+
+		return $query->num_rows();
+	}
 }
 
 /* End of file Model.php */
