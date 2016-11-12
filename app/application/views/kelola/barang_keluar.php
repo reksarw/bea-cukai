@@ -27,13 +27,17 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php 
+                                $no = 1;
+                                foreach($view_data->result() as $data): 
+                                ?>
                                 <tr class="odd gradeX">
-                                    <td>1</td>
-                                    <td>RGKEPABEAAN0003</td>
-                                    <td>BM0001</td>
-                                    <td>a</td>
-                                    <td>a</td>
-                                    <td>24-09-2015</td>
+                                    <td><?= $no++; ?></td>
+                                    <td><?= $data->kode_keluar ?></td>
+                                    <td><?= $data->kode_masuk ?></td>
+                                    <td><?= $data->nomor_surat ?></td>
+                                    <td><?= $data->nama_pemilik ?></td>
+                                    <td><?= $data->tgl_keluar ?></td>
                                     <td>
                                         <button class="btn btn-default edit-data-BKeluar" data-id="1">
                                             <i class="fa fa-pencil"></i> Edit
@@ -46,25 +50,7 @@
                                         </a>
                                     </td>
                                 </tr>
-                                <tr class="odd gradeX">
-                                    <td>2</td>
-                                    <td>RGKEPABEAAN0004</td>
-                                    <td>BM0001</td>
-                                    <td>a</td>
-                                    <td>a</td>
-                                    <td>01-10-2015</td>
-                                    <td>
-                                        <button class="btn btn-default edit-data-BKeluar" data-id="2">
-                                            <i class="fa fa-pencil"></i> Edit
-                                        </button>
-                                        <a href="" class="btn btn-default">
-                                            <i class="fa fa-minus"></i> Hapus
-                                        </a>
-                                        <a href="" class="btn btn-default">
-                                            <i class="fa fa-pencil"></i> Cetak Laporan
-                                        </a>
-                                    </td>
-                                </tr>
+                                <?php endforeach; ?> 
                             </tbody>
                         </table>
                     </div>

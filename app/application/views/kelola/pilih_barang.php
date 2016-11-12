@@ -1,4 +1,5 @@
 <div class="row">
+    <?php echo $this->session->flashdata('message'); ?>    
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
