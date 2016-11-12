@@ -6,21 +6,10 @@
                 Jenis Barang
             </div>
             <div class="panel-body">
-                <ul class="nav nav-tabs">
-                    <li class="active">
-                        <a href="#input" data-toggle="tab">Input Barang Masuk</a>
-                    </li>
-                    <li>
-                        <a href="#data" data-toggle="tab">Data Barang Masuk</a>
-                    </li>
-                </ul>
-
-                <div class="tab-content">
-                    <div class="tab-pane fade in active" id="input">
                         <br>
                         <form role="form" method="POST" action="<?php echo base_url('Kelola/act_barang_masuk') ?>">
                         	<div class="text-center" style="font-weight:bold; font-size:20px;">
-                        		Register Sita
+                        		Edit Barang Masuk
                         	</div>
                         	<div class="col-md-3">
                         		<div class="form-group">
@@ -249,58 +238,11 @@
 
                             <div class="col-md-12">
 		                        <button type="submit" class="btn btn-default">
-		                            <i class="fa fa-save"></i> Save
+		                            <i class="fa fa-save"></i> Edit
 		                        </button>
                             </div>
                         </form>
-                    </div>
-
-                    <div class="tab-pane fade" id="data">
-                        <br>
-                        <table width="100%" class="table table-striped table-bordered table-hover" id="list-data">
-                            <thead>
-                                <tr>
-                                    <th>Nomor</th>
-                                    <th>Kode Masuk</th>
-                                    <th>Nomor Surat</th>
-                                    <th>Juru</th>
-                                    <th>Tanggal Sita</th>
-                                    <th>No Dis</th>
-                                    <th>No Dok</th>
-                                    <th>Nama Pemilik</th>
-                                    <th class="text-center">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php 
-                                $no = 1;
-                                foreach($barang_masuk->result() as $data): ?>
-                                <tr class="odd gradeX">
-                                    <td><?= $no++; ?></td>
-                                    <td><?= $data->kode_masuk ?></td>
-                                    <td><?= $data->nomor_surat?></td>
-                                    <td><?= $data->juru_sita ?></td>
-                                    <td><?= $data->tgl_sita ?></td>
-                                    <td><?= $data->no_disposisi ?></td>
-                                    <td><?= $data->no_dok ?></td>
-                                    <td><?= $data->nama_pemilik ?></td>
-                                    <td>
-                                        <a href="<?= base_url("Kelola/Edit_Barang_Masuk?id=".$data->id."") ?>" class="btn btn-default">
-                                            <i class="fa fa-pencil"></i> Edit
-                                        </a>
-                                        <a href="<?= base_url("Kelola/act_hapus?id=".$data->id.""); ?>" class="btn btn-default" class="btn btn-default">
-                                            <i class="fa fa-minus"></i> Hapus
-                                        </a>
-                                        <a href="<?= base_url("Kelola/print_preview?mode=barang-masuk&print_id=".$data->id."")?>" target="_blank" class="btn btn-default">
-                                            <i class="fa fa-pencil"></i> Cetak Laporan
-                                        </a>
-                                    </td>
-                                </tr>
-                                <?php endforeach; ?> 
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                    
             </div>
         </div>
     </div>

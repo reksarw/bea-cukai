@@ -70,7 +70,7 @@ class Builder extends CI_Model {
 		return FALSE;
 	}
 
-	function countData ($tabel)
+	function countData($tabel)
 	{
 		$query = $this->db->get($tabel);
 

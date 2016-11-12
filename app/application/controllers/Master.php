@@ -37,7 +37,7 @@ class Master extends CI_Controller {
 		$jenis_barang = $this->input->post('jenis_barang');
 		$id = $this->input->post('id');
 		$this->builder->updateData('jenis_barang', array('jenis_barang' => $jenis_barang) , "id = ".$id."");
-
+		$this->session->set_flashdata('msg', succ_msg('Jenis barang berhasil diubah'));
 		redirect('Master/Jenis_Barang');
 	}
 
@@ -51,7 +51,7 @@ class Master extends CI_Controller {
 		$id = $this->input->get('id');
 
 		$this->builder->deleteData('jenis_barang' , array('id' => $id));
-
+		$this->session->set_flashdata('msg', succ_msg('Jenis barang berhasil dihapus'));
 		redirect('Master/Jenis_Barang');		
 	}
 
@@ -70,7 +70,6 @@ class Master extends CI_Controller {
 
 		echo json_encode($JSON);
 	}
-
 }
 
 /* End of file Master.php */

@@ -11,6 +11,23 @@ class Kelola extends CI_Controller {
 		$data['barang_masuk'] = $this->builder->getData('barang_masuk');
 		$this->template->views('kelola/barang_masuk' , $data);
 	}
+
+	public function Edit_Barang_Masuk()
+	{
+		if ( ! $this->input->get('id'))
+		{
+			redirect();
+		}
+
+		$data['jenis_barang'] = $this->builder->getData('jenis_barang');
+		$data['juru_sita'] = $this->builder->getData('jurusita');
+		$this->template->views('kelola/edit_barang_masuk' , $data);
+	}
+
+	public function Add_Barang_Masuk(){
+		$this->template->views('kelola/barang_masuk' , $data);
+	}
+
 	public function Pilih_Barang() {
 		$data['lihat_barang'] = $this->builder->getData('barang_masuk');
 		$this->template->views('kelola/pilih_barang' , $data);
@@ -28,6 +45,18 @@ class Kelola extends CI_Controller {
 	}
 	public function Barang_Keluar() {
 		$this->template->views('kelola/barang_keluar');
+	}
+
+	public function act_hapus()
+	{
+		if ( ! $this->input->get('id'))
+		{
+			redirect();
+		}
+
+		$this->builder->deleteData('barang_masuk' , array('id' => $this->input->get('id')));
+		$this->session->set_flashdata('message', succ_msg('Berhasil menghapus barang'));
+		redirect('Kelola/Barang_Masuk');
 	}
 
 	public function act_barang_masuk()
@@ -76,6 +105,33 @@ class Kelola extends CI_Controller {
 
 			$this->session->set_flashdata('message', succ_msg('Barang masuk berhasil ditambahkan'));
 			redirect('Kelola/Barang_Masuk');
+		}
+	}
+
+	public function print_preview()
+	{
+		if ( ! isset($_REQUEST['mode']) || ! isset($_REQUEST['print_id']))
+		{
+			redirect();
+		}
+
+		$mode = array('barang-masuk', 'sitaan-keluar');
+
+		if ( ! in_array($_REQUEST['mode'] , $mode))
+		{
+			redirect();
+		}
+
+		switch($_REQUEST['mode'])
+		{
+			case 'barang-masuk':
+				$data['barang_masuk'] = $this->builder->getWhere('barang_masuk' , array('id' => $_REQUEST['print_id']));
+				$this->load->view('print/print_barang_masuk' , $data);
+			break;
+
+			case 'sitaan-keluar';
+
+			break;
 		}
 	}
 }
