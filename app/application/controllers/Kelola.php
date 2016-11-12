@@ -3,10 +3,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Kelola extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
-		
+		$this->load->model('builder');
 	}
 	public function Barang_Masuk() {
-		$this->template->views('kelola/barang_masuk');
+		$data['jenis_barang'] = $this->builder->getData('jenis_barang');
+		$data['juru_sita'] = $this->builder->getData('jurusita');
+		$data['barang_masuk'] = $this->builder->getData('barang_masuk');
+		$this->template->views('kelola/barang_masuk' , $data);
 	}
 	public function Pilih_Barang() {
 		$this->template->views('kelola/pilih_barang');
@@ -14,10 +17,57 @@ class Kelola extends CI_Controller {
 	public function Add_Barang_Keluar() {
 		$this->template->views('kelola/add_barang_keluar');
 	}
+	public function Barang_Keluar() {
+		$this->template->views('kelola/barang_keluar');
+	}
 
-	public function act_simpan()
+	public function act_barang_masuk()
 	{
-		print_r($_POST);
+		$this->form_validation->set_rules('kode_masuk','Kode Masuk Barang','required');
+		$this->form_validation->set_rules('nomor_surat','Nomor Surat','required');
+		$this->form_validation->set_rules('lokasi','Lokasi','required');
+		$this->form_validation->set_rules('tgl_sita','Tangagl Sita','required');
+		$this->form_validation->set_rules('no_disposisi','No Disposisi','required');
+		$this->form_validation->set_rules('disposisi_tugas','Disposisi Awal','required');
+		$this->form_validation->set_rules('disposisi_akhir','Disposisi Ahir','required');
+		$this->form_validation->set_rules('jenis_barang','Jenis Barang','required');
+		$this->form_validation->set_rules('kondisi_barang','Kondisi Barang','required');
+		$this->form_validation->set_rules('asal','Asal Barang','required');
+		$this->form_validation->set_rules('tujuan','Tujuan Barang','required');
+		$this->form_validation->set_rules('no_dok','Nomor Dokumen','required');
+		$this->form_validation->set_rules('no_petikemas','Nomor Petikemas','required');
+		$this->form_validation->set_rules('jumlah','Jumlah Barang','required');
+		$this->form_validation->set_rules('pengemasan','Pengemasan','required');
+		$this->form_validation->set_rules('invoice','Invoice','required');
+		$this->form_validation->set_rules('surat_keputusan','Surat Keputusan','required');
+		$this->form_validation->set_rules('no_register','No Register','required');
+		$this->form_validation->set_rules('no_peti','No Peti','required');
+		$this->form_validation->set_rules('nama_pemilik','Nama Pemilik','required');
+		$this->form_validation->set_rules('npwp','NPWP Pemilik','required');
+		$this->form_validation->set_rules('alamat','Alamat Pemilik','required');
+		$this->form_validation->set_rules('tpb','TBP Kepabeaan','required');
+		$this->form_validation->set_rules('reg_sita','No Register Sita ','required');
+		$this->form_validation->set_rules('lama','Lama Sita','required');
+		$this->form_validation->set_rules('rak','Lokasi Sita','required');
+		$this->form_validation->set_rules('kadaluarsa','Kadaluarsa','required');
+		$this->form_validation->set_rules('tanggal_masuk','Tanggal Masuk','required');
+		$this->form_validation->set_rules('nama_petugasa','Nama Petugas 1`','required');
+		$this->form_validation->set_rules('nama_petugasb','Nama Petugas 2','required');
+		$this->form_validation->set_rules('juru_sita','Juru Sita','required');
+
+		if ( $this->form_validation->run() == FALSE)
+		{
+			$this->session->set_flashdata('message', err_msg(validation_errors()));
+			redirect('Kelola/Barang_Masuk');
+		}
+		else
+		{
+			$x = $this->input->post();
+			$this->builder->insertData('barang_masuk', $x);
+
+			$this->session->set_flashdata('message', succ_msg('Barang masuk berhasil ditambahkan'));
+			redirect('Kelola/Barang_Masuk');
+		}
 	}
 }
 

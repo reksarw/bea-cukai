@@ -1,4 +1,5 @@
 <div class="row">
+    <?php echo $this->session->flashdata('message'); ?>
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -17,7 +18,7 @@
                 <div class="tab-content">
                     <div class="tab-pane fade in active" id="input">
                         <br>
-                        <form role="form" method="POST" action="<?php echo base_url('Kelola/act_simpan') ?>">
+                        <form role="form" method="POST" action="<?php echo base_url('Kelola/act_barang_masuk') ?>">
                         	<div class="text-center" style="font-weight:bold; font-size:20px;">
                         		Register Sita
                         	</div>
@@ -57,7 +58,7 @@
                             <div class="col-md-4">
 	                            <div class="form-group">
 	                                <label>B. Disposisi Awal</label>
-	                                <input type="text" class="form-control" placeholder="Disposisi Awal" name="disposisi_awal">
+	                                <input type="text" class="form-control" placeholder="Disposisi Awal" name="disposisi_tugas">
 	                            </div>
                             </div>
                             <div class="col-md-4">
@@ -76,7 +77,9 @@
 	                            <div class="form-group">
 	                                <label>Jenis Barang</label>
 	                                <select name="jenis_barang" class="form-control">
-	                                	<option value="1">Ini</option>
+                                        <?php foreach($jenis_barang->result() as $data): ?>
+	                                	<option value="<?= $data->jenis_barang ?>"><?= $data->jenis_barang ?></option>
+                                        <?php endforeach; ?>
 	                                </select>
 	                            </div>
                             </div>
@@ -109,7 +112,7 @@
                             <div class="col-md-3">
 	                            <div class="form-group">
 	                                <label>Nomor Petikemas</label>
-	                                <input type="text" class="form-control" placeholder="Nomor Petikemas" name="no_peti">
+	                                <input type="text" class="form-control" placeholder="Nomor Petikemas" name="no_petikemas">
 	                            </div>
                             </div>
                             <div class="col-md-3">
@@ -181,7 +184,7 @@
                             <div class="col-md-3">
 	                            <div class="form-group">
 	                                <label>TBP Kepabeaan</label>
-	                                <input type="text" class="form-control" placeholder="TBP Kepabeaan" name="tbp">
+	                                <input type="text" class="form-control" placeholder="TBP Kepabeaan" name="tpb">
 	                            </div>
                             </div>
 
@@ -224,20 +227,22 @@
                             <div class="col-md-3">
 	                            <div class="form-group">
 	                                <label>Nama Petugas 1</label>
-	                                <input type="text" class="form-control" placeholder="Nama Petugas 1" name="namapetugasa">
+	                                <input type="text" class="form-control" placeholder="Nama Petugas 1" name="nama_petugasa">
 	                            </div>
                             </div>
                             <div class="col-md-3">
 	                            <div class="form-group">
 	                                <label>Nama Petugas 2</label>
-	                                <input type="text" class="form-control" placeholder="Nama Petugas 2" name="namapetugasb">
+	                                <input type="text" class="form-control" placeholder="Nama Petugas 2" name="nama_petugasb">
 	                            </div>
                             </div>
                             <div class="col-md-3">
 	                            <div class="form-group">
 	                                <label>Juru Sita</label>
 	                                <select name="juru_sita" class="form-control">
-	                                	<option value="1">Ini</option>
+                                        <?php foreach($juru_sita->result() as $data): ?>
+	                                	<option value="<?= $data->nama; ?>"><?= $data->nama; ?></option>
+                                        <?php endforeach; ?>
 	                                </select>
 	                            </div>
                             </div>
@@ -263,19 +268,22 @@
                                     <th>No Dis</th>
                                     <th>No Dok</th>
                                     <th>Nama Pemilik</th>
-                                    <th>Action</th>
+                                    <th class="text-center">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php 
+                                $no = 1;
+                                foreach($barang_masuk->result() as $data): ?>
                                 <tr class="odd gradeX">
-                                    <td>1</td>
-                                    <td>BM0001</td>
-                                    <td>a</td>
-                                    <td>Ade Riza</td>
-                                    <td>24-05-2015</td>
-                                    <td>a</td>
-                                    <td>a</td>
-                                    <td>a</td>
+                                    <td><?= $no++; ?></td>
+                                    <td><?= $data->kode_masuk ?></td>
+                                    <td><?= $data->nomor_surat?></td>
+                                    <td><?= $data->juru_sita ?></td>
+                                    <td><?= $data->tgl_sita ?></td>
+                                    <td><?= $data->no_disposisi ?></td>
+                                    <td><?= $data->no_dok ?></td>
+                                    <td><?= $data->nama_pemilik ?></td>
                                     <td>
                                         <a href="" class="btn btn-default">
                                             <i class="fa fa-pencil"></i> Edit
@@ -288,6 +296,7 @@
                                         </a>
                                     </td>
                                 </tr>
+                                <?php endforeach; ?> 
                             </tbody>
                         </table>
                     </div>

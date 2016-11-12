@@ -14,7 +14,7 @@
                 <div class="tab-content">
                     <div class="tab-pane fade in active" id="input">
                         <br>
-                        <form role="form" method="POST" action="<?php echo base_url('Master/act_simpan') ?>">
+                        <form role="form" method="POST" action="<?php echo base_url('Kelola/act_barang_keluar') ?>">
                             <div class="text-center" style="font-weight:bold; font-size:20px;">
                                 Register Barang Keluar
                             </div>
@@ -76,7 +76,7 @@
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Tanggal Sita</label>
-                                    <input type="date" type="date" class="form-control" placeholder="Tanggal Sita" name="tgl_sita" disabled>
+                                    <input type="date" class="form-control" placeholder="Tanggal Sita" name="tgl_sita" disabled>
                                 </div>
                             </div>
                             <div class="col-md-2">

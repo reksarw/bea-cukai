@@ -61,7 +61,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url('Transaksi/Pelelangan'); ?>">
+                        <!-- <a href="<?php echo base_url('Transaksi/Pelelangan'); ?>"> -->
+                        <a>
                             <i class="fa fa-paperclip"></i> Pelelangan
                         </a>
                     </li>
