@@ -134,6 +134,19 @@ class Kelola extends CI_Controller {
 			break;
 		}
 	}
+
+	public function edit_barang_keluar() {
+		$id = trim($_POST['id']);
+		$where = [
+			'id' => $id
+		];
+		$data['data_barangKeluar'] = $this->builder->getWhere('barang_keluar', $where);
+		$JSON = [
+			'id' => 'edit-barang-keluar',
+			'modal' => show_my_modal('modal/edit_barang_keluar', 'Edit Barang Keluar', 'edit-barang-keluar', $data)
+		];
+		echo json_encode($JSON);
+	}
 }
 
 /* End of file Kelola.php */
