@@ -39,8 +39,8 @@
                                     <td>a</td>
                                     <td>a</td>
                                     <td>
-                                        <a href="<?php echo base_url('Kelola/Add_Barang_Keluar'); ?>" class="btn btn-default">
-                                            <i class="fa fa-pencil"></i> Add Barang Keluar
+                                        <a href="<?php echo base_url('Transaksi/Add_Lelang'); ?>" class="btn btn-default">
+                                            <i class="fa fa-pencil"></i> Add Lelang
                                         </a>
                                     </td>
                                 </tr>

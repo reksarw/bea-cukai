@@ -76,7 +76,7 @@
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Tanggal Sita</label>
-                                    <input type="date" type="date" class="form-control" placeholder="Tanggal Sita" name="tgl_sita" disabled>
+                                    <input type="date" class="form-control" placeholder="Tanggal Sita" name="tgl_sita" disabled>
                                 </div>
                             </div>
                             <div class="col-md-2">
