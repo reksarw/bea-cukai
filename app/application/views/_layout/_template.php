@@ -10,6 +10,7 @@
         <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <link href="css/ionicons.min.css" rel="stylesheet" type="text/css" />
         <link href="css/AdminLTE.css" rel="stylesheet" type="text/css" />
+
     </head>
     <body class="skin-blue">
         <!-- --HEADER-- -->
@@ -366,7 +367,7 @@
             </aside>
         </div>
 
-
+        <!-- --JS-- -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
         <script src="js/plugins/bootstrap.min.js" type="text/javascript"></script>
         <script src="js/plugins/AdminLTE/app.js" type="text/javascript"></script>
