@@ -4,12 +4,15 @@
         <meta charset="UTF-8">
         <title>AdminLTE | Dashboard</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+
+        <!-- --CSS-- -->
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <link href="css/ionicons.min.css" rel="stylesheet" type="text/css" />
         <link href="css/AdminLTE.css" rel="stylesheet" type="text/css" />
     </head>
     <body class="skin-blue">
+        <!-- --HEADER-- -->
         <header class="header">
             <a href="index.html" class="logo">
                 AdminLTE
@@ -146,7 +149,7 @@
                                 <li class="header">You have 9 tasks</li>
                                 <li>
                                     <ul class="menu">
-                                        <li><!-- Task item -->
+                                        <li>
                                             <a href="#">
                                                 <h3>
                                                     Design some buttons
@@ -158,8 +161,8 @@
                                                     </div>
                                                 </div>
                                             </a>
-                                        </li><!-- end task item -->
-                                        <li><!-- Task item -->
+                                        </li>
+                                        <li>
                                             <a href="#">
                                                 <h3>
                                                     Create a nice theme
@@ -171,8 +174,8 @@
                                                     </div>
                                                 </div>
                                             </a>
-                                        </li><!-- end task item -->
-                                        <li><!-- Task item -->
+                                        </li>
+                                        <li>
                                             <a href="#">
                                                 <h3>
                                                     Some task I need to do
@@ -184,8 +187,8 @@
                                                     </div>
                                                 </div>
                                             </a>
-                                        </li><!-- end task item -->
-                                        <li><!-- Task item -->
+                                        </li>
+                                        <li>
                                             <a href="#">
                                                 <h3>
                                                     Make beautiful transitions
@@ -197,7 +200,7 @@
                                                     </div>
                                                 </div>
                                             </a>
-                                        </li><!-- end task item -->
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="footer">
@@ -205,14 +208,12 @@
                                 </li>
                             </ul>
                         </li>
-                        <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="glyphicon glyphicon-user"></i>
                                 <span>Jane Doe <i class="caret"></i></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <!-- User image -->
                                 <li class="user-header bg-light-blue">
                                     <img src="img/avatar3.png" class="img-circle" alt="User Image" />
                                     <p>
@@ -220,7 +221,6 @@
                                         <small>Member since Nov. 2012</small>
                                     </p>
                                 </li>
-                                <!-- Menu Body -->
                                 <li class="user-body">
                                     <div class="col-xs-4 text-center">
                                         <a href="#">Followers</a>
@@ -232,7 +232,6 @@
                                         <a href="#">Friends</a>
                                     </div>
                                 </li>
-                                <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
                                         <a href="#" class="btn btn-default btn-flat">Profile</a>
@@ -247,12 +246,11 @@
                 </div>
             </nav>
         </header>
+
         <div class="wrapper row-offcanvas row-offcanvas-left">
-            <!-- Left side column. contains the logo and sidebar -->
+            <!-- --SIDEBAR-- -->
             <aside class="left-side sidebar-offcanvas">                
-                <!-- sidebar: style can be found in sidebar.less -->
                 <section class="sidebar">
-                    <!-- Sidebar user panel -->
                     <div class="user-panel">
                         <div class="pull-left image">
                             <img src="img/avatar3.png" class="img-circle" alt="User Image" />
@@ -263,7 +261,6 @@
                             <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                         </div>
                     </div>
-                    <!-- search form -->
                     <form action="#" method="get" class="sidebar-form">
                         <div class="input-group">
                             <input type="text" name="q" class="form-control" placeholder="Search..."/>
@@ -272,8 +269,6 @@
                             </span>
                         </div>
                     </form>
-                    <!-- /.search form -->
-                    <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
                         <li class="active">
                             <a href="index.html">
@@ -361,38 +356,19 @@
                         </li>
                     </ul>
                 </section>
-                <!-- /.sidebar -->
             </aside>
 
-            <!-- Right side column. Contains the navbar and content of the page -->
-            <aside class="right-side">                
-                <!-- Content Header (Page header) -->
-                <section class="content-header">
-                    <h1>
-                        Blank page
-                        <small>Control panel</small>
-                    </h1>
-                    <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li class="active">Blank page</li>
-                    </ol>
-                </section>
-
-                <!-- Main content -->
+            <aside class="right-side">
                 <section class="content">
+                    <!-- --CONTENT-- -->
+                
+                </section>
+            </aside>
+        </div>
 
 
-                </section><!-- /.content -->
-            </aside><!-- /.right-side -->
-        </div><!-- ./wrapper -->
-
-
-        <!-- jQuery 2.0.2 -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-        <!-- Bootstrap -->
         <script src="js/plugins/bootstrap.min.js" type="text/javascript"></script>
-        <!-- AdminLTE App -->
         <script src="js/plugins/AdminLTE/app.js" type="text/javascript"></script>
-
     </body>
 </html>
