@@ -22,7 +22,7 @@
                 </a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="<?php echo base_url('Master/Jenis'); ?>">
+                        <a href="<?php echo base_url('Master/Jenis_Barang'); ?>">
                             <i class="fa fa-bookmark"></i> Jenis Barang
                         </a>
                     </li>

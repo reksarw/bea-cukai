@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>Sistem Pelelangan | Direktorat Jenderal BEA DAN CUKAI</title>
 
     <!-- CSS -->
     <?php echo $_css; ?>
