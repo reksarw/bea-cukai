@@ -17,7 +17,7 @@
                 <div class="tab-content">
                     <div class="tab-pane fade in active" id="input">
                         <br>
-                        <form role="form" method="POST" action="<?php echo base_url('Master/act_simpan') ?>">
+                        <form role="form" method="POST" action="<?php echo base_url('Kelola/act_barang_masuk') ?>">
                         	<div class="text-center" style="font-weight:bold; font-size:20px;">
                         		Register Sita
                         	</div>
@@ -263,7 +263,7 @@
                                     <th>No Dis</th>
                                     <th>No Dok</th>
                                     <th>Nama Pemilik</th>
-                                    <th>Action</th>
+                                    <th class="text-center">Action</th>
                                 </tr>
                             </thead>
                             <tbody>

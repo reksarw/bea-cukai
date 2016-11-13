@@ -38,7 +38,7 @@
                                 <tr>
                                     <th>Nomor</th>
                                     <th>Jenis Barang</th>
-                                    <th>Action</th>
+                                    <th class="text-center">Action</th>
                                 </tr>
                             </thead>
                             <tbody>

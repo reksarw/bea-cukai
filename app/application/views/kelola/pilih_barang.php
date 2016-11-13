@@ -25,7 +25,7 @@
                                     <th>No Dis</th>
                                     <th>No Dok</th>
                                     <th>Nama Pemilik</th>
-                                    <th>Action</th>
+                                    <th class="text-center">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
