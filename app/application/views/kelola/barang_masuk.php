@@ -256,20 +256,35 @@
                             <thead>
                                 <tr>
                                     <th>Nomor</th>
-                                    <th>Jenis Barang</th>
+                                    <th>Kode Masuk</th>
+                                    <th>Nomor Surat</th>
+                                    <th>Juru</th>
+                                    <th>Tanggal Sita</th>
+                                    <th>No Dis</th>
+                                    <th>No Dok</th>
+                                    <th>Nama Pemilik</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="odd gradeX">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 4.0</td>
+                                    <td>1</td>
+                                    <td>BM0001</td>
+                                    <td>a</td>
+                                    <td>Ade Riza</td>
+                                    <td>24-05-2015</td>
+                                    <td>a</td>
+                                    <td>a</td>
+                                    <td>a</td>
                                     <td>
                                         <a href="" class="btn btn-default">
                                             <i class="fa fa-pencil"></i> Edit
                                         </a>
                                         <a href="" class="btn btn-default">
                                             <i class="fa fa-minus"></i> Hapus
+                                        </a>
+                                        <a href="" class="btn btn-default">
+                                            <i class="fa fa-pencil"></i> Cetak Laporan
                                         </a>
                                     </td>
                                 </tr>
