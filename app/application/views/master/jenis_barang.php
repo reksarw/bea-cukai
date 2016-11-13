@@ -22,7 +22,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Jenis Barang</label>
-                                    <input class="form-control" placeholder="Jenis Barang" name="jenis_barang">
+                                    <input type="text" class="form-control" placeholder="Jenis Barang" name="jenis_barang">
                                 </div>
                                 <button type="submit" class="btn btn-default">
                                     <i class="fa fa-save"></i> Save
