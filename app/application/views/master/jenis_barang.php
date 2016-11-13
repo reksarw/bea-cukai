@@ -1,4 +1,5 @@
 <div class="row">
+    <?php echo $this->session->flashdata('msg'); ?>
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -18,7 +19,7 @@
                     <div class="tab-pane fade in active" id="input">
                         <br>
                         <form role="form" method="POST" action="<?php echo base_url('Master/act_simpan') ?>">
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Jenis Barang</label>
                                     <input class="form-control" placeholder="Jenis Barang" name="jenis_barang">
