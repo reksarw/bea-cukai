@@ -17,4 +17,20 @@ $(document).ready(function() {
         responsive: true
     });
 });
+
+$(document).on("click", ".edit-data", function() {
+	var id = $(this).attr("data-id");
+	
+	$.ajax({
+		method: "POST",
+		url: "<?php echo base_url('Master/edit_data'); ?>",
+		data: "id=" +id
+	})
+	.done(function(data) {
+		var result = jQuery.parseJSON(data);
+
+		$('#mymodal').html(result.modal);
+		$('#'+result.id).modal('show');
+	})
+})
 </script>

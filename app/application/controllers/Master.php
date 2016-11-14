@@ -30,6 +30,22 @@ class Master extends CI_Controller {
 		}
 	}
 
+	public function edit_data() {
+		$id = trim($_POST['id']);
+
+		$where = [
+			'id' => $id
+		];
+		$data['data_jenis'] = $this->builder->getWhere('jenis_barang', $where);
+
+		$JSON = [
+			'id' => 'edit-data-jenis',
+			'modal' => show_my_modal('modal/edit_jenis_barang', 'Edit Jenis Barang', 'edit-data-jenis', $data)
+		];
+
+		echo json_encode($JSON);
+	}
+
 }
 
 /* End of file Master.php */

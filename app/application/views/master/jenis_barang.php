@@ -46,9 +46,9 @@
                                     <td>Trident</td>
                                     <td>Internet Explorer 4.0</td>
                                     <td>
-                                        <a href="" class="btn btn-default">
+                                        <button class="btn btn-default edit-data" data-id="1"> <!-- Data ID isi en id jenis -->
                                             <i class="fa fa-pencil"></i> Edit
-                                        </a>
+                                        </button>
                                         <a href="" class="btn btn-default">
                                             <i class="fa fa-minus"></i> Hapus
                                         </a>
@@ -62,3 +62,5 @@
         </div>
     </div>
 </div>
+
+<div id="mymodal"></div>
