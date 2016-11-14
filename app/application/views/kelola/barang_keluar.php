@@ -35,9 +35,9 @@
                                     <td>a</td>
                                     <td>24-09-2015</td>
                                     <td>
-                                        <a href="" class="btn btn-default">
+                                        <button class="btn btn-default edit-data-BKeluar" data-id="1">
                                             <i class="fa fa-pencil"></i> Edit
-                                        </a>
+                                        </button>
                                         <a href="" class="btn btn-default">
                                             <i class="fa fa-minus"></i> Hapus
                                         </a>
@@ -54,9 +54,9 @@
                                     <td>a</td>
                                     <td>01-10-2015</td>
                                     <td>
-                                        <a href="" class="btn btn-default">
+                                        <button class="btn btn-default edit-data-BKeluar" data-id="2">
                                             <i class="fa fa-pencil"></i> Edit
-                                        </a>
+                                        </button>
                                         <a href="" class="btn btn-default">
                                             <i class="fa fa-minus"></i> Hapus
                                         </a>
@@ -73,3 +73,5 @@
         </div>
     </div>
 </div>
+
+<div id="mymodal"></div>

@@ -11,3 +11,5 @@
         <img src="<?php echo base_url(); ?>/assets/img/logo_polinema.jpg" style="height:100%; float:right;">
     </div>
 </div>
+
+<?php Generate_kodeKeluar(); ?>

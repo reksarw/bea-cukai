@@ -49,7 +49,7 @@
                                     <td><?= $no++ ?></td>
                                     <td><?= $data->jenis_barang; ?></td>
                                     <td>
-                                        <button class="btn btn-default edit-data" data-id="<?= $data->id; ?>"> <!-- Data ID isi en id jenis -->
+                                        <button class="btn btn-default edit-data" data-id="<?= $data->id; ?>">
                                             <i class="fa fa-pencil"></i> Edit
                                         </button>
                                         <a href="<?= base_url().'Master/act_delete?id='.$data->id; ?>" class="btn btn-default">
