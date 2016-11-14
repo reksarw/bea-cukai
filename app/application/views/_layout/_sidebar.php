@@ -5,7 +5,7 @@
                 <img src="<?php echo base_url() ?>assets/img/avatar3.png" alt="User Image" />
             </div>
             <div class="pull-left info">
-                <p>Hello, Jane</p>
+                <p>Hello, <?php echo $this->session->userdata('user_session')->user; ?></p>
 
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
