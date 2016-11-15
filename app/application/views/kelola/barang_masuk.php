@@ -1,5 +1,5 @@
 <?php
-    $kode_masuk = generate_KB('BM');
+    $kode_masuk = generate_KB('BM' ,'barang_masuk');
 ?>
 
 <div class="row">

@@ -37,12 +37,12 @@
 		}
 	}
 
-	function generate_KB($format='') {
+	function generate_KB($format='' , $tabel) {
 		$_ci = &get_instance();
 		
 		$_ci->load->model('Builder');
 
-		$last_id = $_ci->Builder->countData('barang_masuk')+1;
+		$last_id = $_ci->Builder->countData($tabel)+1;
 
 		$kode = $format .sprintf("%04d", $last_id);
 

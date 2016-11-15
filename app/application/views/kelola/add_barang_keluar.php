@@ -1,5 +1,5 @@
 <?php
-    $kode_keluar = generate_KB('BK');
+    $kode_keluar = generate_KB('BK' , 'barang_keluar');
 ?>
 <div class="row">
     <?php echo $this->session->flashdata('message'); ?>

@@ -1,5 +1,5 @@
 <?php
-    $kode_lelang = generate_KB('KPBEANSU-MSU-');
+    $kode_lelang = generate_KB('KPBEANSU-MSU-' , 'lelang');
 ?>
 <div class="row">
     <?php echo $this->session->flashdata('message'); ?>
@@ -21,7 +21,7 @@
                 <div class="tab-content">
                     <div class="tab-pane fade in active" id="input">
                     <?php
-                    if ( ! $this->input->get('kode_lelang'))
+                    if ( ! $this->input->get('kode_masuk'))
                     {
                     ?>
                     <h4>Pilih barang keluar terlebih dahulu <a href="<?= base_url('Transaksi/Transaksi_Barang'); ?>">klik disini</a></h4>
@@ -60,9 +60,9 @@
                                     <input type="text" class="form-control" placeholder="Nomor Register Sita" name="reg_sita" value="<?= $query->no_register ?>" disabled>
                                 </div>
                             </div>
-                            <input type="hidden" name="kode_lelang" value="<?= $query->kode_lelang; ?>"/>
+                            <input type="hidden" name="kode_lelang" value="<?= $kode_lelang; ?>"/>
                             <input type="hidden" name="jumlah" value="<?= $query->jumlah; ?>"/>
-                            <input type="hidden" name="id_barang" value="<?= $query->id_barang; ?>"/>
+                            <input type="hidden" name="id_barang" value="<?= $query->id; ?>"/>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Lama Sita</label>
@@ -222,10 +222,10 @@
                                     <td><?= $data->nomor_surat ?></td>
                                     <td><?= $data->kode_lelang ?></td>
                                     <td><?= $data->kode_masuk ?></td>
-                                    <td>opo iki ?</td>
+                                    <td><?= $data->jenis_barang; ?></td>
                                     <td><?= $data->tgl_lelang ?></td>
                                     <td>
-                                        <button class="btn btn-default edit-data-BLelang" data-id="<?= $data->id; ?>">
+                                        <button class="btn btn-default edit-data-BLelang" data-id="<?= $data->kode_lelang; ?>">
                                             <i class="fa fa-pencil"></i> Edit
                                         </button>
                                         <a href="<?= base_url("Transaksi/act_hapus?kode_lelang=".$data->kode_lelang."&id=".$data->id.""); ?>" class="btn btn-default">

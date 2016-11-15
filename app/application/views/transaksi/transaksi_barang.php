@@ -43,7 +43,7 @@
                                     <td><?= $data->no_dok ?></td>
                                     <td><?= $data->nama_pemilik ?></td>
                                     <td>
-                                        <a href="<?php echo base_url("Transaksi/Add_Lelang?kode_lelang=".$data->kode_lelang.""); ?>" class="btn btn-default">
+                                        <a href="<?php echo base_url("Transaksi/Add_Lelang?kode_masuk=".$data->kode_masuk.""); ?>" class="btn btn-default">
                                             <i class="fa fa-pencil"></i> Add Lelang
                                         </a>
                                     </td>

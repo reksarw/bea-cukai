@@ -56,7 +56,7 @@ $(document).on("click", ".edit-data-BLelang", function() {
 	$.ajax({
 		method: "POST",
 		url: "<?php echo base_url('Transaksi/edit_lelang'); ?>",
-		data: "id=" +id
+		data: "kode_lelang=" +id
 	})
 	.done(function(data) {
 		var result = jQuery.parseJSON(data);
