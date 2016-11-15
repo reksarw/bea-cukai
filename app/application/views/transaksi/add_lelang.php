@@ -10,7 +10,7 @@
                         <a href="#input" data-toggle="tab">Input Barang Lelang</a>
                     </li>
                     <li>
-                        <a href="#data" data-toggle="tab">Data Barang Keluar</a>
+                        <a href="#data" data-toggle="tab">Data Barang Lelang</a>
                     </li>
                 </ul>
 
