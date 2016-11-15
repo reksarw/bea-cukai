@@ -1,4 +1,5 @@
 <form role="form" method="POST" action="<?php echo base_url('Kelola/act_edit_barang_keluar') ?>">
+    <input type="hidden" value="<?= $data_barangKeluar->id; ?>" name="id" />
     <div class="form-group">
         <label>Kode Keluar</label>
         <input type="text" class="form-control" placeholder="Kode Keluar" name="kode_keluar" value="<?php echo $data_barangKeluar->kode_keluar; ?>" readonly>

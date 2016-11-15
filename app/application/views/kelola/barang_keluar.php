@@ -1,4 +1,5 @@
 <div class="row">
+    <?php echo $this->session->flashdata('message'); ?>
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -39,13 +40,13 @@
                                     <td><?= $data->nama_pemilik ?></td>
                                     <td><?= $data->tgl_keluar ?></td>
                                     <td>
-                                        <button class="btn btn-default edit-data-BKeluar" data-id="1">
+                                        <button class="btn btn-default edit-data-BKeluar" data-id="<?= $data->id; ?>">
                                             <i class="fa fa-pencil"></i> Edit
                                         </button>
-                                        <a href="" class="btn btn-default">
+                                        <a href="<?= base_url("Kelola/hapus_bk?id=".$data->id."&kode_keluar=".$data->kode_keluar.""); ?>" class="btn btn-default">
                                             <i class="fa fa-minus"></i> Hapus
                                         </a>
-                                        <a href="" class="btn btn-default">
+                                        <a href="<?= base_url("Kelola/print_preview?mode=barang-keluar&print_id=".$data->id.""); ?>" target="_blank" class="btn btn-default">
                                             <i class="fa fa-pencil"></i> Cetak Laporan
                                         </a>
                                     </td>

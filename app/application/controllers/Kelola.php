@@ -44,7 +44,7 @@ class Kelola extends Auth_Controller {
 		$this->template->views('kelola/add_barang_keluar' , $data);
 	}
 	public function Barang_Keluar() {
-		$data['view_data'] = $this->builder->buildQuery("SELECT barang_keluar.kode_keluar , barang_masuk.kode_masuk , barang_masuk.nomor_surat , barang_masuk.nama_pemilik , barang_keluar.tgl_keluar FROM barang_masuk , barang_keluar WHERE barang_keluar.id_barang = barang_masuk.id");
+		$data['view_data'] = $this->builder->buildQuery("SELECT barang_keluar.id , barang_keluar.kode_keluar , barang_masuk.kode_masuk , barang_masuk.nomor_surat , barang_masuk.nama_pemilik , barang_keluar.tgl_keluar FROM barang_masuk , barang_keluar WHERE barang_keluar.id_barang = barang_masuk.id");
 		$this->template->views('kelola/barang_keluar' , $data);
 	}
 
@@ -58,11 +58,6 @@ class Kelola extends Auth_Controller {
 		$this->builder->deleteData('barang_masuk' , array('id' => $this->input->get('id')));
 		$this->session->set_flashdata('message', succ_msg('Berhasil menghapus barang'));
 		redirect('Kelola/Barang_Masuk');
-	}
-
-	public function hapus_bk()
-	{
-
 	}
 
 	public function act_edit()
@@ -140,7 +135,7 @@ class Kelola extends Auth_Controller {
 			redirect();
 		}
 
-		$mode = array('barang-masuk', 'sitaan-keluar');
+		$mode = array('barang-masuk', 'barang-keluar');
 
 		if ( ! in_array($_REQUEST['mode'] , $mode))
 		{
@@ -154,8 +149,9 @@ class Kelola extends Auth_Controller {
 				$this->load->view('print/print_barang_masuk' , $data);
 			break;
 
-			case 'sitaan-keluar';
-
+			case 'barang-keluar';
+				$data['lihat_data'] = $this->builder->buildQuery("SELECT * FROM barang_masuk , barang_keluar WHERE barang_masuk.id = barang_keluar.id_barang AND barang_keluar.id = ".$this->input->get('print_id')."")->row(); 
+				$this->load->view('print/print_barang_keluar' , $data);
 			break;
 		}
 	}
@@ -198,9 +194,46 @@ class Kelola extends Auth_Controller {
 			$this->session->set_flashdata('message', succ_msg('Barang keluar berhasil ditambahkan'));
 			redirect('Kelola/Pilih_Barang');
 		}
-
-		print_r($this->input->post());
 	}
+
+	public function act_edit_barang_keluar()
+	{
+		$this->form_validation->set_rules('kode_keluar','Kode Keluar' , 'required|trim');
+		$this->form_validation->set_rules('reg_keluar','Kode Keluar' , 'required|trim');
+		$this->form_validation->set_rules('petugasa','Kode Keluar' , 'required|trim');
+		$this->form_validation->set_rules('petugasb','Kode Keluar' , 'required|trim');
+		$this->form_validation->set_rules('tgl_keluar','Kode Keluar' , 'required|trim');
+
+		if ( $this->form_validation->run() == FALSE)
+		{
+			$this->session->set_flashdata('message', err_msg(validation_errors()));
+			redirect('Kelola/Barang_Keluar');
+		}
+		else
+		{
+			$x = $this->input->post();
+			$this->builder->updateData('barang_keluar', $x , array('id' => $this->input->post('id')));
+
+			$this->session->set_flashdata('message', succ_msg('Barang keluar berhasil diubah'));
+			redirect('Kelola/Barang_Keluar');
+		}
+	}
+
+	public function hapus_bk()
+	{
+		if ( ! $this->input->get('id') || ! $this->input->get('kode_keluar'))
+		{
+			redirect();
+		}
+
+		$id = $this->input->get('id');
+		$kode_keluar = $this->input->get('kode_keluar');
+
+		$this->builder->deleteData('barang_keluar' , array('id' => $id , 'kode_keluar' => $kode_keluar));
+		$this->session->set_flashdata('message', succ_msg('Barang keluar berhasil dihapus'));
+		redirect('Kelola/Barang_Keluar');
+	}
+
 }
 
 /* End of file Kelola.php */

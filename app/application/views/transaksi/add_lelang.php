@@ -1,4 +1,5 @@
 <div class="row">
+    <?php echo $this->session->flashdata('message'); ?>
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -16,6 +17,16 @@
 
                 <div class="tab-content">
                     <div class="tab-pane fade in active" id="input">
+                    <?php
+                    if ( ! $this->input->get('kode_lelang'))
+                    {
+                    ?>
+                    <h4>Pilih barang keluar terlebih dahulu <a href="<?= base_url('Transaksi/Transaksi_Barang'); ?>">klik disini</a></h4>
+                    <?php
+                    }
+                    else
+                    {
+                    ?>
                         <br>
                         <form role="form" method="POST" action="<?php echo base_url('Transaksi/act_add_lelang') ?>">
                             <br>
@@ -25,7 +36,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Kode Lelang</label>
-                                    <input type="text" class="form-control" placeholder="Kode Lelang" name="kode_lelang" value="KPBEAN-MSU-0004" disabled>
+                                    <input type="text" class="form-control" placeholder="Kode Lelang" name="kode_lelang" value="<?= @$query->kode_lelang ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -43,10 +54,12 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Nomor Register Sita</label>
-                                    <input type="text" class="form-control" placeholder="Nomor Register Sita" name="reg_sita" value="KBCA-TSCS001-02-10-15-0029" disabled>
+                                    <input type="text" class="form-control" placeholder="Nomor Register Sita" name="reg_sita" value="<?= $query->no_register ?>" disabled>
                                 </div>
                             </div>
-
+                            <input type="hidden" name="kode_lelang" value="<?= $query->kode_lelang; ?>"/>
+                            <input type="hidden" name="jumlah" value="<?= $query->jumlah; ?>"/>
+                            <input type="hidden" name="id_barang" value="<?= $query->id_barang; ?>"/>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Lama Sita</label>
@@ -56,25 +69,25 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Jumlah Barang</label>
-                                    <input type="text" class="form-control" placeholder="Jumlah Barang" name="jumlah" value="2" disabled>
+                                    <input type="text" class="form-control" placeholder="Jumlah Barang" name="jumlah" value="<?= $query->jumlah; ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Nama Pemilik</label>
-                                    <input type="text" class="form-control" placeholder="Nama Pemilik" name="nama_pemilik" value="RIKWANTO" disabled>
+                                    <input type="text" class="form-control" placeholder="Nama Pemilik" name="nama_pemilik" value="<?= $query->nama_pemilik; ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Alamat</label>
-                                    <input type="text" class="form-control" placeholder="Alamat" name="alamat" value="MADURA" disabled>
+                                    <input type="text" class="form-control" placeholder="Alamat" name="alamat" value="<?= $query->alamat?>" disabled>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Ijin Tbp</label>
-                                    <input type="text" class="form-control" placeholder="Ijin TBP" name="tbp" value="REG-099749587-0" disabled>
+                                    <input type="text" class="form-control" placeholder="Ijin TBP" name="tbp" value="<?= $query->tpb; ?>" disabled>
                                 </div>
                             </div>
 
@@ -85,37 +98,37 @@
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Jenis Barang</label>
-                                    <input type="text" class="form-control" placeholder="Jenis Barang" name="jenis_barang" value="ROKOK" disabled>
+                                    <input type="text" class="form-control" placeholder="Jenis Barang" name="jenis_barang" value="<?= $query->jenis_barang ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Kondisi Barang</label>
-                                    <input type="text" class="form-control" placeholder="Kondisi Barang" name="kondisi_barang" value="BAIK" disabled>
+                                    <input type="text" class="form-control" placeholder="Kondisi Barang" name="kondisi_barang" value="<?= $query->kondisi_barang ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Asal Barang</label>
-                                    <input type="text" class="form-control" placeholder="Asal Barang" name="asal" value="MADURA" disabled>
+                                    <input type="text" class="form-control" placeholder="Asal Barang" name="asal" value="<?= $query->asal ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Tujuan Barang</label>
-                                    <input type="text" class="form-control" placeholder="Tujuan Barang" name="tujuan" value="MALANG" disabled>
+                                    <input type="text" class="form-control" placeholder="Tujuan Barang" name="tujuan" value="<?= $query->tujuan ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>No Dokumen</label>
-                                    <input type="text" class="form-control" placeholder="Nomor Dokumen" name="no_dok" value="SNRMAS00190966" disabled>
+                                    <input type="text" class="form-control" placeholder="Nomor Dokumen" name="no_dok" value="<?= $query->no_dok ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>No Petikemas</label>
-                                    <input type="text" class="form-control" placeholder="Nomor Petikemas" name="no_peti" value="1" disabled>
+                                    <input type="text" class="form-control" placeholder="Nomor Petikemas" name="no_peti" value="<?= $query->no_peti ?>" disabled>
                                 </div>
                             </div>
 
@@ -136,8 +149,8 @@
                                 </div>
                             </div>
                             <div class="col-md-3">
-                                <div class="form-group">
-                                    <label>Petugas C</label>
+                                <div class="form-group"
+>                                    <label>Petugas C</label>
                                     <input type="text" class="form-control" placeholder="Petugas C" name="petugasc">
                                 </div>
                             </div>
@@ -180,6 +193,7 @@
                             </div>
                         </form>
                     </div>
+                    <?php } ?>
 
                     <div class="tab-pane fade" id="data">
                         <br>
@@ -196,38 +210,27 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php 
+                                $no = 1;
+                                foreach($barang_lelang as $data): 
+                                ?>
                                 <tr class="odd gradeX">
-                                    <td>1</td>
-                                    <td>KPBEAN-MSU-0001</td>
-                                    <td>aaa</td>
-                                    <td>aaa</td>
-                                    <td>a</td>
-                                    <td>21-09-2015</td>
+                                    <td><?= $no++ ?></td>
+                                    <td><?= $data->nomor_surat ?></td>
+                                    <td><?= $data->kode_lelang ?></td>
+                                    <td><?= $data->kode_masuk ?></td>
+                                    <td>opo iki ?</td>
+                                    <td><?= $data->tgl_lelang ?></td>
                                     <td>
-                                        <a href="" class="btn btn-default">
+                                        <a href="<?= base_url("Transaksi/act_edit_lelang?kode_lelang=".$data->kode_lelang."&id=".$data->id."");?>" class="btn btn-default">
                                             <i class="fa fa-pencil"></i> Edit
                                         </a>
-                                        <a href="" class="btn btn-default">
+                                        <a href="<?= base_url("Transaksi/act_hapus?kode_lelang=".$data->kode_lelang."&id=".$data->id.""); ?>" class="btn btn-default">
                                             <i class="fa fa-minus"></i> Hapus
                                         </a>
                                     </td>
                                 </tr>
-                                <tr class="odd gradeX">
-                                    <td>2</td>
-                                    <td>KPBEAN-MSU-0002</td>
-                                    <td>a</td>
-                                    <td>habis massa</td>
-                                    <td>a</td>
-                                    <td>10-01-2015</td>
-                                    <td>
-                                        <a href="" class="btn btn-default">
-                                            <i class="fa fa-pencil"></i> Edit
-                                        </a>
-                                        <a href="" class="btn btn-default">
-                                            <i class="fa fa-minus"></i> Hapus
-                                        </a>
-                                    </td>
-                                </tr>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>
