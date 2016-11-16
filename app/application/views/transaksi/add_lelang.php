@@ -1,3 +1,6 @@
+<?php
+    $kode_lelang = generate_KB('KPBEANSU-MSU-');
+?>
 <div class="row">
     <?php echo $this->session->flashdata('message'); ?>
     <div class="col-lg-12">
@@ -36,7 +39,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Kode Lelang</label>
-                                    <input type="text" class="form-control" placeholder="Kode Lelang" name="kode_lelang" value="<?= @$query->kode_lelang ?>" disabled>
+                                    <input type="text" class="form-control" placeholder="Kode Lelang" name="kode_lelang" value="<?=$kode_lelang; ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-md-3">

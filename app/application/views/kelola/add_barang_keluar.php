@@ -1,3 +1,6 @@
+<?php
+    $kode_keluar = generate_KB('BK');
+?>
 <div class="row">
     <?php echo $this->session->flashdata('message'); ?>
     <div class="col-lg-12">
@@ -23,7 +26,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Kode Keluar</label>
-                                    <input type="text" class="form-control" placeholder="Kode Keluar" name="kode_keluar" value="BK0001" readonly>
+                                    <input type="text" class="form-control" placeholder="Kode Keluar" name="kode_keluar" value="<?=$kode_keluar?>" readonly>
                                 </div>
                             </div>
                             <div class="clearfix"></div>
