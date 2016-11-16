@@ -76,6 +76,22 @@ class Transaksi extends Auth_Controller {
 
 		echo 'It work!';
 	}
+
+	public function edit_lelang() {
+		$id = trim($_POST['id']);
+
+		$where = [
+			'id' => $id
+		];
+		$data['data_lelang'] = $this->builder->getWhere('lelang', $where);
+
+		$JSON = [
+			'id' => 'edit-data-lelang',
+			'modal' => show_my_modal('modal/edit_barang_lelang', 'Edit Barang Lelang', 'edit-data-lelang', $data)
+		];
+
+		echo json_encode($JSON);
+	}
 }
 
 /* End of file Transaksi.php */

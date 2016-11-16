@@ -44,7 +44,22 @@ $(document).on("click", ".edit-data-BKeluar", function() {
 	})
 	.done(function(data) {
 		var result = jQuery.parseJSON(data);
-		console.log(result);
+
+		$('#mymodal').html(result.modal);
+		$('#'+result.id).modal('show');
+	})
+})
+
+$(document).on("click", ".edit-data-BLelang", function() {
+	var id = $(this).attr("data-id");
+	
+	$.ajax({
+		method: "POST",
+		url: "<?php echo base_url('Transaksi/edit_lelang'); ?>",
+		data: "id=" +id
+	})
+	.done(function(data) {
+		var result = jQuery.parseJSON(data);
 
 		$('#mymodal').html(result.modal);
 		$('#'+result.id).modal('show');

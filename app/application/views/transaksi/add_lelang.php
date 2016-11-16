@@ -222,9 +222,9 @@
                                     <td>opo iki ?</td>
                                     <td><?= $data->tgl_lelang ?></td>
                                     <td>
-                                        <a href="<?= base_url("Transaksi/act_edit_lelang?kode_lelang=".$data->kode_lelang."&id=".$data->id."");?>" class="btn btn-default">
+                                        <button class="btn btn-default edit-data-BLelang" data-id="<?= $data->id; ?>">
                                             <i class="fa fa-pencil"></i> Edit
-                                        </a>
+                                        </button>
                                         <a href="<?= base_url("Transaksi/act_hapus?kode_lelang=".$data->kode_lelang."&id=".$data->id.""); ?>" class="btn btn-default">
                                             <i class="fa fa-minus"></i> Hapus
                                         </a>
@@ -239,3 +239,5 @@
         </div>
     </div>
 </div>
+
+<div id="mymodal"></div>
