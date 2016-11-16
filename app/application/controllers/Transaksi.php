@@ -42,7 +42,7 @@ class Transaksi extends Auth_Controller {
 		if ( $this->form_validation->run() == FALSE)
 		{
 			$this->session->set_flashdata('message', err_msg(validation_errors()));
-			redirect("Transaksi/Transaksi_Barang");
+			redirect($_SERVER['HTTP_REFERER']);
 		}
 		else
 		{

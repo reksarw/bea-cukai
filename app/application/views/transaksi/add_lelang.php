@@ -195,8 +195,8 @@
                                 </button>
                             </div>
                         </form>
-                    </div>
                     <?php } ?>
+                    </div>
 
                     <div class="tab-pane fade" id="data">
                         <br>
