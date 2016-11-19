@@ -1,8 +1,7 @@
 ### Aplikasi Bea Cukai
 - Bea Cukai Versi 1 https://github.com/reksarw/bea-cukai/tree/master/bea_cukai-v1 <br/>
 - Bea Cukai Versi 2 (coming soon)<br/>
-<br/>
-### Authors<br/>
+### Authors
 * Achmad Chadil Auwfar<br/>
 :point_right: [Instagram Account] {https://www.instagram.com/auwfar/}<br/>
 :point_right: [Facebook Account] {https://www.facebook.com/auwfar.chadil}<br/>
