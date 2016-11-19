@@ -11,4 +11,4 @@
 * Reksa Rangga Wardhana<br/>
 :point_right: Instagram Account https://www.instagram.com/reksarw<br/>
 :point_right: Facebook Account https://www.facebook.com/ReksaRW<br/>
-:point_right: [GitHub Account]{https://github.com/reksarw}{:target="_blank"}<br/>
+:point_right: <a href="https://github.com/reksarw" target="_blank">GitHub Account</a><br/>
