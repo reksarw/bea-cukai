@@ -6,7 +6,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">Sistem Pelelangan | Direktorat Jenderal BEA DAN CUKAI</a>
+        <a class="navbar-brand" href="index.html">Sistem Pencatatan Formulir BEA DAN CUKAI</a>
     </div>
 
     <!-- Menu -->

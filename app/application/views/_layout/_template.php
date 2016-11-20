@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sistem Pelelangan | Direktorat Jenderal BEA DAN CUKAI</title>
+    <title>Sistem Pencatatan Formulir BEA DAN CUKAI</title>
 
     <!-- CSS -->
     <?php echo $_css; ?>

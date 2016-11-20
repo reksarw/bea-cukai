@@ -13,7 +13,11 @@ class Surat extends Auth_Controller {
 		switch($halaman)
 		{
 			case 'surat-masuk';
-				// view surat masuk
+				$this->template->views('data_surat/data_surat_masuk');
+			break;
+
+			case 'edit-surat-masuk';
+				$this->template->views('data_surat/edit_surat_masuk');
 			break;
 
 			default:

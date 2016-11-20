@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Login ke Aplikasi Pencatatan Barang Sitaan Bea Cukai</title>
+    <title>Login ke Aplikasi Pencatatan Formulir Bea dan Cukai</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -50,7 +50,7 @@
                     <?php
                         if($this->session->flashdata('msg') == '') {
                         ?>
-                            SELAMAT DATANG PADA SISTEM PENCATATAN BARANG SITAAN BEA CUKAI
+                            SELAMAT DATANG PADA SISTEM PENCATATAN FORMULIR BEA DAN CUKAI
                             <br>
                         <?php
                         } else {

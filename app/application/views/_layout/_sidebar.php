@@ -13,64 +13,37 @@
         <ul class="nav" id="side-menu">
             <li>
                 <a href="<?php echo base_url('Home'); ?>">
-                    <i class="fa fa-home"></i> Home
+                    <i class="fa fa-home"></i> Dashboard
                 </a>
             </li>
             <li>
                 <a>
-                    <i class="fa fa-building-o"></i> Master<span class="fa arrow"></span>
+                    <i class="fa fa-file-text-o"></i> Master<span class="fa arrow"></span>
                 </a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="<?php echo base_url('Master/Jenis_Barang'); ?>">
-                            <i class="fa fa-bookmark"></i> Jenis Barang
+                        <a href="<?php echo base_url('Master/menu/data-perusahaan'); ?>">
+                            <i class="fa fa-building"></i> Data Perusahaan
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('Master/menu/jenis-layanan'); ?>">
+                            <i class="fa fa-bookmark"></i> Jenis Layanan
                         </a>
                     </li>
                 </ul>
             </li>
             <li>
                 <a>
-                    <i class="fa fa-building-o"></i> Kelola Barang<span class="fa arrow"></span>
+                    <i class="fa fa-desktop"></i> Data Surat<span class="fa arrow"></span>
                 </a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="<?php echo base_url('Kelola/Barang_Masuk'); ?>">
-                            <i class="fa fa-bookmark"></i> Barang Masuk
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url('Kelola/Pilih_Barang'); ?>">
-                            <i class="fa fa-paperclip"></i> Pilih Barang
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url('Kelola/Barang_Keluar'); ?>">
-                            <i class="fa fa-building-o"></i> Barang Keluar
+                        <a href="<?php echo base_url('Surat/menu/surat-masuk'); ?>">
+                            <i class="fa fa-envelope"></i> Data Surat Masuk
                         </a>
                     </li>
                 </ul>
-            </li>
-            <li>
-                <a>
-                    <i class="fa fa-windows"></i> Transaksi<span class="fa arrow"></span>
-                </a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="<?php echo base_url('Transaksi/Transaksi_Barang'); ?>">
-                            <i class="fa fa-building-o"></i> Transaksi Barang
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url('Transaksi/Add_Lelang'); ?>">
-                            <i class="fa fa-paperclip"></i> Pelelangan
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a>
-                    <i class="fa fa-print"></i> Laporan
-                </a>
             </li>
         </ul>
     </div>

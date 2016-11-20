@@ -3,7 +3,7 @@
         <img src="<?php echo base_url(); ?>/assets/img/logo_beacukai.png" style="height:100%">
     </div>
     <div class="col-md-4" style="text-align:center;">
-        -- SELAMAT DATANG DI
+        SELAMAT DATANG DI SISTEM PENCATATAN FORMULIR BEA DAN CUKAI
         <br>
         cReated By : Someone
     </div>
