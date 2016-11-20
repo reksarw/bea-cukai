@@ -27,29 +27,28 @@
                             </thead>
                             <tbody>
                                 <?php 
-                                // $no = 1 ;
-                                // foreach($jenis_barang as $data): ?>
+                                $no = 1 ;
+                                foreach($perusahaan as $data): ?>
                                 <tr class="odd gradeX">
-                                    <!-- <td><?= $no++ ?></td> -->
-                                    <td>1</td>
-                                    <td>GUDANG GARAM</td>
+                                    <td><?= $no++ ?></td>
+                                    <td><?= $data->nama_perusahaan?></td>
                                     <td class="text-center">
-                                        <button class="btn btn-default edit-perusahaan" data-id="1">
+                                        <button class="btn btn-default edit-perusahaan" data-id="<?= $data->id; ?>">
                                             <i class="fa fa-pencil"></i> Edit
                                         </button>
-                                        <a href="<?= base_url() ?>" class="btn btn-default">
+                                        <a href="<?= base_url()."master/delete?section=perusahaan&id=".$data->id ?>" class="btn btn-default">
                                             <i class="fa fa-minus"></i> Hapus
                                         </a>
                                     </td>
                                 </tr>
-                                <?php //endforeach; ?>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>
 
                     <div class="tab-pane fade" id="input">
                         <br>
-                        <form role="form" method="POST" action="<?php echo base_url('Master/act_simpan_perusahaan') ?>">
+                        <form role="form" method="POST" action="<?php echo base_url('master/act_simpan_perusahaan') ?>">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Nama Perusahaan</label>

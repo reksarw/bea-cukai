@@ -70,8 +70,13 @@ class Builder extends CI_Model {
 		return FALSE;
 	}
 
-	function countData($tabel)
+	function countData($tabel , $where ='')
 	{
+		if ( $where != '')
+		{
+			$this->db->where($where);
+		}
+
 		$query = $this->db->get($tabel);
 
 		return $query->num_rows();

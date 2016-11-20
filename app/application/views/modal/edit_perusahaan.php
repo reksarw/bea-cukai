@@ -1,9 +1,9 @@
-<form role="form" method="POST" action="<?php echo base_url('Master/act_edit_perusahaan') ?>">
+<form role="form" method="POST" action="<?php echo base_url('master/act_edit_perusahaan') ?>">
     <div class="col-md-12">
-        <input type="hidden" name="id" value="1">
+        <input type="hidden" name="id" value="<?= $data_perusahaan->id ?>">
         <div class="form-group">
             <label>Nama Perusahaan</label>
-            <input type="text" class="form-control" required placeholder="Nama Perusahaan" name="nama_perusahaan" value="GUDANG GARAM">
+            <input type="text" class="form-control" required placeholder="Nama Perusahaan" name="nama_perusahaan" value="<?= $data_perusahaan->nama_perusahaan; ?>">
         </div>
         <button type="submit" class="btn btn-default">
             <i class="fa fa-save"></i> Save

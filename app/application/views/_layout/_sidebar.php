@@ -22,12 +22,12 @@
                 </a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="<?php echo base_url('Master/menu/data-perusahaan'); ?>">
+                        <a href="<?php echo base_url('master/data-perusahaan'); ?>">
                             <i class="fa fa-building"></i> Data Perusahaan
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url('Master/menu/jenis-layanan'); ?>">
+                        <a href="<?php echo base_url('master/jenis-layanan'); ?>">
                             <i class="fa fa-bookmark"></i> Jenis Layanan
                         </a>
                     </li>
@@ -39,7 +39,7 @@
                 </a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="<?php echo base_url('Surat/menu/surat-masuk'); ?>">
+                        <a href="<?php echo base_url('surat/surat-masuk'); ?>">
                             <i class="fa fa-envelope"></i> Data Surat Masuk
                         </a>
                     </li>

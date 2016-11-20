@@ -22,6 +22,114 @@ class Master extends Auth_Controller {
 				$this->template->views('master/jenis_layanan', $data);
 			break;
 
+			case 'act_simpan_perusahaan';
+				if ( ! $this->input->post())
+				{
+					redirect();
+				}
+
+				if ( $this->input->post('nama_perusahaan') == '')
+				{
+					$this->session->set_flashdata('msg', err_msg('Nama perusahaan tidak boleh kosong'));
+				}else{
+					$this->builder->insertData('perusahaan' , $this->input->post());
+					$this->session->set_flashdata('msg', succ_msg('Berhasil menambah data perusahaan'));
+				}
+
+				redirect('master/data-perusahaan');
+			break;
+
+			case 'act_simpan_jenisLayanan';
+				if ( ! $this->input->post())
+				{
+					redirect();
+				}
+
+				if ( $this->input->post('jenis_kegiatan') == '')
+				{
+					$this->session->set_flashdata('msg', err_msg('Jenis layanan tidak boleh kosong'));
+				}else{
+					$this->builder->insertData('jenis_kegiatan' , $this->input->post());
+					$this->session->set_flashdata('msg', succ_msg('Berhasil menambah data jenis layanan'));
+				}
+
+				redirect('master/jenis-layanan');
+			break;
+
+			case 'act_edit_perusahaan';
+				if ( ! $this->input->post())
+				{
+					redirect();
+				}
+
+				if ( $this->input->post('nama_perusahaan') == '')
+				{
+					$this->session->set_flashdata('msg', err_msg('Nama perusahaan tidak boleh kosong'));
+				}else{
+					$this->builder->updateData('perusahaan' , array("nama_perusahaan" => $this->input->post('nama_perusahaan')) , "id = ".$this->input->post('id')."");
+
+					$this->session->set_flashdata('msg', succ_msg('Berhasil mengubah data perusahaan'));
+				}
+
+				redirect('master/data-perusahaan');
+			break;
+
+			case 'act_edit_jenisLayanan';
+				if ( ! $this->input->post())
+				{
+					redirect();
+				}
+
+				if ( $this->input->post('jenis_kegiatan') == '')
+				{
+					$this->session->set_flashdata('msg', err_msg('Jenis Pelayanan tidak boleh kosong'));
+				}else{
+					$this->builder->updateData('jenis_kegiatan' , array("jenis_kegiatan" => $this->input->post('jenis_kegiatan')) , "id = ".$this->input->post('id')."");
+
+					$this->session->set_flashdata('msg', succ_msg('Berhasil mengubah data jenis pelayanan'));
+				}
+
+				redirect('master/jenis-layanan');
+			break;
+
+			case 'delete';
+				if ( ! $this->input->get('section') || ! $this->input->get('id'))
+				{
+					redirect();
+				}
+
+				switch($this->input->get('section'))
+				{
+					case 'perusahaan';
+						if ( $this->builder->countData('perusahaan',"id=".$this->input->get('id')) == 0)
+						{
+							$this->session->set_flashdata('msg', err_msg('Data perusahaan gagal dihapus'));
+						}else{
+							$this->builder->deleteData('perusahaan', array('id' => $this->input->get('id')));
+							$this->session->set_flashdata('msg', succ_msg('Berhasil mengubah data perusahaan'));
+						}
+
+						redirect('master/data-perusahaan');
+					break;
+
+					case 'layanan';
+						if ( $this->builder->countData('jenis_kegiatan',"id=".$this->input->get('id')) == 0)
+						{
+							$this->session->set_flashdata('msg', err_msg('Data jenis layanan gagal dihapus'));
+						}else{
+							$this->builder->deleteData('jenis_kegiatan', array('id' => $this->input->get('id')));
+							$this->session->set_flashdata('msg', succ_msg('Berhasil mengubah data jenis layanan'));
+						}
+
+						redirect('master/jenis-layanan');
+					break;
+
+					default:
+						redirect();
+					break;
+				}
+			break;
+
 			default:
 				show_404();
 			break;

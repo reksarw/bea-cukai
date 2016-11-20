@@ -27,29 +27,28 @@
                             </thead>
                             <tbody>
                                 <?php 
-                                // $no = 1 ;
-                                // foreach($jenis_barang as $data): ?>
+                                $no = 1 ;
+                                foreach($jenis_kegiatan as $data): ?>
                                 <tr class="odd gradeX">
-                                    <!-- <td><?= $no++ ?></td> -->
-                                    <td>1</td>
-                                    <td>CUKAI ROKOK</td>
+                                    <td><?= $no++ ?></td>
+                                    <td><?= $data->jenis_kegiatan ?></td>
                                     <td class="text-center">
-                                        <button class="btn btn-default edit-jenis-layanan" data-id="1">
+                                        <button class="btn btn-default edit-jenis-layanan" data-id="<?= $data->id ?>">
                                             <i class="fa fa-pencil"></i> Edit
                                         </button>
-                                        <a href="<?= base_url() ?>" class="btn btn-default">
+                                        <a href="<?= base_url()."master/delete?section=layanan&id=".$data->id ?>" class="btn btn-default">
                                             <i class="fa fa-minus"></i> Hapus
                                         </a>
                                     </td>
                                 </tr>
-                                <?php //endforeach; ?>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>
 
                     <div class="tab-pane fade" id="input">
                         <br>
-                        <form role="form" method="POST" action="<?php echo base_url('Master/act_simpan_jenisLayanan') ?>">
+                        <form role="form" method="POST" action="<?php echo base_url('master/act_simpan_jenisLayanan') ?>">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Nama Layanan</label>
