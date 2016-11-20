@@ -7,7 +7,7 @@
             </div>
             <div class="panel-body">
                 <br>
-                <form role="form" method="POST" action="<?php echo base_url('Master/act_edit_SuratMasuk') ?>">
+                <form role="form" method="POST" action="<?php echo base_url('surat/act_edit_SuratMasuk') ?>">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>No Surat</label>

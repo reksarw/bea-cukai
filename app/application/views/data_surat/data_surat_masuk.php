@@ -31,33 +31,32 @@
                             </thead>
                             <tbody>
                                 <?php 
-                                // $no = 1 ;
-                                // foreach($jenis_barang as $data): ?>
+                                $no = 1 ;
+                                foreach($surat_masuk->result() as $data): ?>
                                 <tr class="odd gradeX">
-                                    <!-- <td><?= $no++ ?></td> -->
-                                    <td>1</td>
-                                    <td>a</td>
-                                    <td>CUKAI ROKOK</td>
-                                    <td>GUDANG GARAM</td>
-                                    <td>a</td>
-                                    <td>DATA PT GUDANG GARAM</td>
+                                    <td><?= $no++ ?></td>
+                                    <td><?= $data->no_surat ?></td>
+                                    <td><?= $data->jenis_kegiatan ?></td>
+                                    <td><?= $data->nama_perusahaan ?></td>
+                                    <td><?= $data->alamat ?></td>
+                                    <td><?= $data->judulsurat ?></td>
                                     <td class="text-center">
-                                        <a href="<?= base_url('Surat/menu/edit-surat-masuk') ?>" class="btn btn-default">
+                                        <a href="<?= base_url("surat/edit-surat-masuk?id=".$data->id) ?>" class="btn btn-default">
                                             <i class="fa fa-pencil"></i> Edit
                                         </a>
-                                        <a href="<?= base_url() ?>" class="btn btn-default">
+                                        <a href="<?= base_url("surat/act_hapus?id=".$data->id) ?>" class="btn btn-default">
                                             <i class="fa fa-minus"></i> Hapus
                                         </a>
                                     </td>
                                 </tr>
-                                <?php //endforeach; ?>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>
 
                     <div class="tab-pane fade" id="input">
                         <br>
-                        <form role="form" method="POST" action="<?php echo base_url('Master/act_simpan_SuratMasuk') ?>">
+                        <form role="form" method="POST" action="<?php echo base_url('surat/act_simpan_SuratMasuk') ?>">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>No Surat</label>
