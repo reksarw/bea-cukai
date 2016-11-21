@@ -56,7 +56,7 @@
 
                     <div class="tab-pane fade" id="input">
                         <br>
-                        <form role="form" method="POST" action="<?php echo base_url('surat/act_simpan_SuratMasuk') ?>">
+                        <form role="form" enctype="multipart/form-data" method="POST" action="<?php echo base_url('surat/act_simpan_SuratMasuk') ?>">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>No Surat</label>
