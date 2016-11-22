@@ -4,11 +4,11 @@
 
 ### Authors <a id="section-2"></a>
 * Achmad Chadil Auwfar<br/>
-:point_right: Instagram Account https://www.instagram.com/auwfar :angry:<br/>
-:point_right: Facebook Account https://www.facebook.com/auwfar.chadil :kissing:<br/>
-:point_right: GitHub Account https://github.com/auwfar :laughing:<br/>
+:point_right: Instagram Account https://www.instagram.com/auwfar :smile:<br/>
+:point_right: Facebook Account https://www.facebook.com/auwfar.chadil :smile:<br/>
+:point_right: GitHub Account https://github.com/auwfar :smile:<br/>
 <br/>
 * Reksa Rangga Wardhana<br/>
-:point_right: Instagram Account https://www.instagram.com/reksarw :blush:<br/>
-:point_right: Facebook Account https://www.facebook.com/ReksaRW :smile:<br/>
-:point_right: GitHub Account https://github.com/reksarw :stuck_out_tongue_closed_eyes:<br/>
+:point_right: Instagram Account https://www.instagram.com/reksarw :rage:<br/>
+:point_right: Facebook Account https://www.facebook.com/ReksaRW :rage:<br/>
+:point_right: GitHub Account https://github.com/reksarw :rage:<br/>
