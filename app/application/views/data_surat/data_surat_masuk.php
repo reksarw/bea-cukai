@@ -75,10 +75,9 @@
                                 <div class="form-group">
                                     <label>Jenis Layanan</label>
                                     <select name="jenis_kegiatan" class="form-control">
-                                        <?php //foreach($jenis_kegiatan->result() as $data): ?>
-                                        <!-- <option value="<?= $data->jenis_kegiatan ?>"><?= $data->jenis_kegiatan ?></option> -->
-                                        <option value="Jenis Kegiatan">Jenis Kegiatan</option>
-                                        <?php //endforeach; ?>
+                                        <?php foreach($jenis_kegiatan->result() as $data): ?>
+                                        <option value="<?= $data->jenis_kegiatan ?>"><?= $data->jenis_kegiatan ?></option>
+                                        <?php endforeach; ?>
                                     </select>
                                 </div>
                             </div>
@@ -101,10 +100,9 @@
                                 <div class="form-group">
                                     <label>Perusahaan</label>
                                     <select name="nama_perusahaan" class="form-control">
-                                        <?php //foreach($jenis_kegiatan->result() as $data): ?>
-                                        <!-- <option value="<?= $data->jenis_kegiatan ?>"><?= $data->jenis_kegiatan ?></option> -->
-                                        <option value="GUDANG GARAM">GUDANG GARAM</option>
-                                        <?php //endforeach; ?>
+                                        <?php foreach($perusahaan->result() as $data): ?>
+                                        <option value="<?= $data->nama_perusahaan ?>"><?= $data->nama_perusahaan ?></option>
+                                        <?php endforeach; ?>
                                     </select>
                                 </div>
                             </div>

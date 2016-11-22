@@ -45,6 +45,8 @@ class Login extends CI_Controller {
 					set_cookie($cookie);
 				}
 
+				$proses = $this->builder->buildQuery('UPDATE login SET lastlogin = NOW() WHERE user ="' .$username .'"');
+
 				$this->session->set_userdata('user_session', $proses);
 				
 				redirect('Home');

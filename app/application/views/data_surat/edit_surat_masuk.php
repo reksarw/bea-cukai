@@ -7,7 +7,8 @@
             </div>
             <div class="panel-body">
                 <br>
-                <form role="form" method="POST" action="<?php echo base_url('surat/act_edit_SuratMasuk') ?>">
+                <form role="form" method="POST" action="<?php echo base_url('surat/act_edit_SuratMasuk') ?>" enctype="multipart/form-data">
+                    <input type="hidden" name="id" value="<?= $surat->id ?>">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>No Surat</label>
@@ -18,7 +19,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Tanggal Surat</label>
-                            <input type="date" class="form-control" placeholder="Tanggal Surat" name="tgl_surat">
+                            <input type="date" class="form-control" placeholder="Tanggal Surat" name="tgl_surat" value="<?= $surat->tgl_surat;?>">
                         </div>
                     </div>
 
@@ -27,7 +28,14 @@
                             <label>Jenis Layanan</label>
                             <select name="jenis_kegiatan" class="form-control">
                                 <?php foreach($jenis_kegiatan->result() as $data): ?>
-                                <option value="<?= $data->jenis_kegiatan ?>"><?= $data->jenis_kegiatan ?></option>
+                                    <?php
+                                    if ($surat->jenis_kegiatan == $data->jenis_kegiatan) {
+                                        $selected = 'selected';
+                                    } else {
+                                        $selected = '';
+                                    }
+                                    ?>
+                                <option value="<?= $data->jenis_kegiatan ?>" <?=$selected?>><?= $data->jenis_kegiatan ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
@@ -37,12 +45,12 @@
                         <div class="form-group">
                             <label>Jenis BKC</label>
                             <select name="jenis_bkc" class="form-control">
-                                <option value="SKT">SKT</option>
-                                <option value="KLB">KLB</option>
-                                <option value="SKTF">SKTF</option>
-                                <option value="KLM">KLM</option>
-                                <option value="TIS">TIS</option>
-                                <option value="Hasil Tembakau">Hasil Tembakau</option>
+                                <option value="SKT" <?php if ($surat->jenis_bkc == 'SKT') {echo "selected";} ?>>SKT</option>
+                                <option value="KLB" <?php if ($surat->jenis_bkc == 'KLB') {echo "selected";} ?>>KLB</option>
+                                <option value="SKTF" <?php if ($surat->jenis_bkc == 'SKTF') {echo "selected";} ?>>SKTF</option>
+                                <option value="KLM" <?php if ($surat->jenis_bkc == 'KLM') {echo "selected";} ?>>KLM</option>
+                                <option value="TIS" <?php if ($surat->jenis_bkc == 'TIS') {echo "selected";} ?>>TIS</option>
+                                <option value="Hasil Tembakau" <?php if ($surat->jenis_bkc == 'Hasil Tembakau') {echo "selected";} ?>>Hasil Tembakau</option>
                             </select>
                         </div>
                     </div>
@@ -52,7 +60,14 @@
                             <label>Perusahaan</label>
                             <select name="nama_perusahaan" class="form-control">
                                 <?php foreach($nama_perusahaan->result() as $data): ?>
-                                <<option value="<?= $data->nama_perusahaan ?>"><?= $data->nama_perusahaan ?></option>
+                                    <?php
+                                    if ($surat->nama_perusahaan == $data->nama_perusahaan) {
+                                        $selected = 'selected';
+                                    } else {
+                                        $selected = '';
+                                    }
+                                    ?>
+                                <option value="<?= $data->nama_perusahaan ?>" <?=$selected?>><?= $data->nama_perusahaan ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
@@ -107,10 +122,16 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-3">
                         <div class="form-group">
                             <label>File Surat</label>
-                            <input type="file" class="form-control" placeholder="File Surat" name="surat">
+                            <input type="text" class="form-control" placeholder="File Surat" value="<?= $surat->surat?>" disabled>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <input type="file" class="form-control" name="surat">
                         </div>
                     </div>
 
